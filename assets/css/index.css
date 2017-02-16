@@ -1,0 +1,269 @@
+@charset "UTF-8";
+/* line 19, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+* {
+  position: relative;
+  font-family: "Hind Vadodara", sans-serif, "微軟正黑體"; }
+
+/* line 25, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333; }
+
+/* line 37, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+label {
+  cursor: pointer; }
+
+/* line 41, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.daybox {
+  width: 50%;
+  max-width: 400px;
+  background-color: #f3f3f3;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  cursor: pointer; }
+  /* line 50, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .daybox:hover .bottom {
+    height: 100px; }
+  /* line 54, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .daybox:hover .dayweather {
+    opacity: 1;
+    top: 0px; }
+
+/* line 61, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.temsvg {
+  width: 100%; }
+  /* line 64, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .temsvg polyline {
+    stroke: #f3f3f3;
+    stroke-width: 1px;
+    fill: none;
+    opacity: 0.2; }
+  /* line 71, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .temsvg text {
+    fill: #f3f3f3;
+    transform: translateX(-10px) translateY(20px);
+    font-size: 12px;
+    opacity: 0; }
+  /* line 78, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .temsvg circle {
+    fill: #f3f3f3;
+    opacity: 0.2; }
+
+/* line 84, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.rain {
+  width: 2px;
+  height: 10px;
+  position: absolute;
+  left: 45px;
+  bottom: 15px;
+  animation: raindrop 1s infinite linear;
+  background-color: #f3f3f3; }
+
+/* line 93, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.rain2 {
+  left: 70px;
+  bottom: 20px;
+  animation-delay: -0.4s; }
+
+/* line 99, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.rain3 {
+  left: 30px;
+  bottom: 20px;
+  animation-delay: -0.7s; }
+
+/* line 105, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.top {
+  height: 330px;
+  background: linear-gradient(20deg, #19283D, #1D678F);
+  background-size: 100% 300%;
+  animation: daylight 20s both;
+  border-radius: 10px 10px 0px 0px; }
+  /* line 112, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .top .moon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    box-shadow: 15px -15px;
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    animation: moonmove 20s infinite; }
+
+/* line 123, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.cloud {
+  width: 100px;
+  height: 36px;
+  position: absolute;
+  left: 200px;
+  bottom: 50px;
+  border-radius: 20px;
+  animation: coluddrift 4s infinite;
+  background-color: #f2f9fe;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); }
+  /* line 133, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .cloud:before, .cloud:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: #f2f9fe; }
+  /* line 142, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .cloud:before {
+    left: 16px;
+    top: -28px; }
+  /* line 146, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .cloud:after {
+    left: 35px;
+    top: -20px; }
+
+/* line 152, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.bottom {
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 0px 0px 10px 10px;
+  overflow: hidden;
+  transition-duration: 2s; }
+  /* line 161, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .bottom .dayweather {
+    width: calc(100% / 7 - 5px);
+    display: inline-block;
+    text-align: center;
+    opacity: 0;
+    top: 20px;
+    transition: 0.5s; }
+    /* line 169, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+    .bottom .dayweather h3 {
+      font-size: 8px;
+      color: rgba(51, 51, 51, 0.6);
+      font-weight: 400;
+      letter-spacing: 1px; }
+    /* line 176, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+    .bottom .dayweather svg {
+      width: 100%;
+      height: 35px;
+      max-width: 35px; }
+      /* line 180, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+      .bottom .dayweather svg .sun {
+        fill: #FFF208;
+        stroke: rgba(255, 242, 8, 0.5);
+        stroke-width: 30px;
+        stroke-dasharray: 5px; }
+      /* line 187, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+      .bottom .dayweather svg .rain {
+        stroke: #4DACFF; }
+      /* line 191, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+      .bottom .dayweather svg .cloud {
+        fill: #ccc; }
+
+/* line 198, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.text_area {
+  display: inline-block;
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  color: #f3f3f3; }
+  /* line 205, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .text_area .temperature {
+    font-size: 75px;
+    line-height: 75px; }
+  /* line 209, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+  .text_area .infos {
+    font-size: 13px;
+    opacity: 0.5; }
+
+/* line 217, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+#switch_night {
+  display: none; }
+
+/* line 223, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.dayweather:nth-child(1) {
+  transition-delay: 0.2s; }
+
+/* line 226, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.dayweather:nth-child(2) {
+  transition-delay: 0.4s; }
+
+/* line 229, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.dayweather:nth-child(3) {
+  transition-delay: 0.6s; }
+
+/* line 232, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.dayweather:nth-child(4) {
+  transition-delay: 0.8s; }
+
+/* line 235, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.dayweather:nth-child(5) {
+  transition-delay: 1s; }
+
+/* line 238, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.dayweather:nth-child(6) {
+  transition-delay: 1.2s; }
+
+/* line 241, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.dayweather:nth-child(7) {
+  transition-delay: 1.4s; }
+
+/* line 245, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.moon, .cloud {
+  transition: 0.5s; }
+
+/* line 250, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.temsvg circle, .temsvg polyline, .temsvg text {
+  transition: 0.5s; }
+
+/* line 254, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.temsvg polyline {
+  transition: 0.5s 0.3s; }
+
+/* line 258, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+.temsvg text {
+  transition: 0.5s 0.6s; }
+
+/* line 264, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+#switch_night:checked + .top .moon, #switch_night:checked + .top .cloud {
+  opacity: 0.2; }
+
+/* line 268, C:/Users/kappa/Desktop/HTML/Exercise/Weather Box/assets/css/index.scss */
+#switch_night:checked + .top .temsvg circle, #switch_night:checked + .top .temsvg polyline, #switch_night:checked + .top .temsvg text {
+  opacity: 1; }
+
+@keyframes raindrop {
+  0% {
+    transform: translateY(0px); }
+  100% {
+    transform: translateY(50px);
+    opacity: 0; } }
+
+@keyframes moonmove {
+  0% {
+    box-shadow: 15px -15px #FFF208;
+    transform: translateX(-15px) translateY(15px); }
+  100% {
+    box-shadow: -30px 30px #FFF208;
+    transform: translateX(30px) translateY(-30px); } }
+
+@keyframes coluddrift {
+  0% {
+    transform: translateY(0px); }
+  50% {
+    transform: translateY(-10px); }
+  100% {
+    transform: translateY(0px); } }
+
+@keyframes daylight {
+  0% {
+    background-position: 100% 30%; }
+  100% {
+    background-position: 100% 100%; } }
+
+/*# sourceMappingURL=index.css.map */
